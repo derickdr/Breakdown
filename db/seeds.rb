@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Group.destroy_all
+Item.destroy_all
+
 superuser = User.create(
     first_name: 'Derick',
     last_name: 'Del Rosario',
@@ -13,14 +17,31 @@ superuser = User.create(
     password: 'password'
 )
 
-User.all
+PASSWORD = 'password123'
 
+10.times do
+    first_name = Faker::Name.first_name
+    last_name = Faker::Name.last_name
+    User.create(
+      first_name: first_name,
+      last_name: last_name,
+      email: '#{first_name.downcase}-#{last_name.downcase}@example.com',
+      password: PASSWORD
+    )
+end
 
-group = Group.create(
-    name: 'H&H'
-)
+users = User.all
 
-Group.all
+byebug
+
+10.times do
+    name = Faker::Name.name
+    Group.create(
+      name: name
+    )
+end
+
+groups = Group.all
 
 
 item = Item.create(
