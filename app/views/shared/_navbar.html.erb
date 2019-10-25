@@ -1,16 +1,17 @@
+
 <div class='nav-container'>
     <div class='nav-row'>
         <div class='nav-group'>
             <div class='nav-item'>
-                <%= image_tag('/images/logo.png') %>
+                <%= image_tag 'logo.png', size: '75x75' %>
             </div>
         </div>
         <div class='nav-group'>
             <div class='nav-item'>
-                Hello Derick
+                <h3 class='greeting'>Hello <%= current_user %></h3>
             </div>
             <div class='nav-item'>
-                <%= link_to 'Sign Out', sign_in_path %>
+                <%= link_to 'Sign Out', sessions_path, :method => :delete %>
             </div>
         </div>
     </div>
@@ -19,13 +20,13 @@
         </div>
         <div class='nav-group'>
             <div class='nav-item'>
-                <%= link_to 'Home', home_index_path %>
+                <%= link_to 'Home', root_path %>
             </div>
             <div class='nav-item'>
-                <%= link_to 'Inventory', home_index_path %>
+                <%= link_to 'Inventory', root_path %>
             </div>
             <div class='nav-item'>
-                <%= link_to 'Group', home_index_path %>
+                <%= link_to 'Group', root_path %>
             </div>
         </div>
         <div class='nav-group'>

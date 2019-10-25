@@ -1,4 +1,9 @@
 class HomeController < ApplicationController
-  def index
-  end
+
+    before_action :authenticate_user!, only: [:new, :create, :destroy]
+  
+    def index
+ 
+    end
+
 end
