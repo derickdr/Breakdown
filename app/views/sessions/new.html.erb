@@ -1,0 +1,23 @@
+<div class='page-container'>
+    <div class='column'>
+        <%= form_with url: sessions_path, local: true do |f| %>
+            <div class='column'>
+                <div class='row'>
+                    <div class='column'>
+                        <%= f.label :email %>
+                        <%= f.email_field :email, placeholder: 'whois@joe.com' %>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='column'>
+                        <%= f.label :password %>
+                        <%= f.password_field :password, placeholder: 'joeMAMA' %>
+                    </div>
+                </div>
+                <div class='row'>
+                    <%= f.submit 'Sign In' %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
