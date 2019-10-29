@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_174318) do
+ActiveRecord::Schema.define(version: 2019_10_28_233644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_10_25_174318) do
     t.integer "acquisition_value"
     t.integer "disposal_value"
     t.string "notes"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "user_groups", force: :cascade do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_174318) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "items", "users"
   add_foreign_key "user_groups", "groups", column: "groups_id"
   add_foreign_key "user_groups", "items", column: "items_id"
   add_foreign_key "user_groups", "users", column: "users_id"

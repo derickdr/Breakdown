@@ -1,3 +1,49 @@
 <div class='column'>
-    <%= form_with model: %>
+    <%= form_with model: @item, local: true do |f| %>
+        <div class='row'>
+            <div class='column'>
+                <%= f.label :brand %>
+                <%= f.text_field :brand %>
+            </div>
+            <div class='column'>
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='column'>
+                <%= f.label :sex %>
+                <%= f.text_field :sex %>
+            </div>
+            <div class='column'>
+                <%= f.label :size%>
+                <%= f.text_field :size%>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='column'>
+                <%= f.label :pictures %>
+                <%= f.text_field :pictures %>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='column'>
+                <%= f.label :acquisition_price %>
+                <%= f.text_field :acquisition_price %>
+            </div>
+            <div class='column'>
+                <%= f.label :disposal_price %>
+                <%= f.text_field :disposal_price %>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='column'>
+                <%= f.label :notes %>
+                <%= f.text_field :notes%>
+            </div>
+        <div>
+        <div class='row'>
+            <%= f.submit 'Add Item' %>
+        </div>
+    <% end %>
 </div>

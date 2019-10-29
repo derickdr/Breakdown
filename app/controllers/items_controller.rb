@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.new item_params
+        @item.mark = false
     end
 
     def show
@@ -14,7 +15,6 @@ class ItemsController < ApplicationController
     end
     
     def index
-        @item = Item.find(params[:id])
     end
 
     def edit
@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.require(:item).permit(:name, :brand, :sex, :size, :pictures, :acquisition_value, :disposal_value, :notes)
+        params.require(:item).permit(:name, :brand, :sex, :size, :pictures, :acquisition_value, :disposal_value, :notes, :mark)
+    end
 
 end
