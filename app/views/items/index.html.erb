@@ -4,26 +4,24 @@
     </div>
     <div class='row'>
         <div class='column'>
-            =
-        </div>
-        <div class='column'>
-            =
-        </div>
-        <div class='column'>
-            <%= link_to 'New Item', new_item_path%>
+            <%= link_to 'New Item', new_item_path %>
         </div>
     </div>
     <div class='row'>
         <div class='column'>
-            <%# <%= form_tag %> %>
+            <% @items.each do |item| %>
                 <div class='row'>
-                    <%# <%= @item.brand %> | %>
-                    <%# <%= @item.name %> %>
+                    <div class='column'>
+                        <div class='row'>
+                            <%= item.brand %> |
+                            <%= item.name %>
+                        </div>
+                        <div class='row'>
+                            <%= link_to 'Details', item_path(item) %>
+                        </div>
+                    </div>
                 </div>
-                <div class='row'>
-                    <%# <%= link_to 'Details', item_path %> %>
-                </div>
-            <%# <% end %> %>
+            <% end %>
         </div>
     </div>
 </div>

@@ -14,17 +14,34 @@
  *= require_self
  */
 
+/* Application Colors */
+
+$deepest: #685FC9
+$deep: #B290E8
+$moderate: #DEAAFF
+$light: #F1DFFF
+$lightest: #FFF4FF
+
+$nav-deep: #AD9EFF
+$nav-moderate: #a994f8
+
+/* Page setup */
+
 body
     display: flex
     flex-direction: column
-    background-color: lightblue
-    border-left: 5em solid blue
-    border-right: 5em solid blue
+    justify-content: flex-start
+    min-height: 100vh
 
 .page-container
     display: flex
     flex-direction: column
     padding: 0% 12.5% 0%
+    background-color: $deep
+    border-style: solid
+    border-color: $deepest
+    border-width: 0em 5em 0em 5em
+    min-height: 100vh
 
 
 .column
@@ -32,8 +49,6 @@ body
     flex-direction: column
     box-sizing: border-box
     border: 2px solid red
-    padding: 1em
-    margin: 1em
 
 .row
     display: flex
@@ -41,23 +56,21 @@ body
     flex-wrap: wrap
     box-sizing: border-box
     border: 2px solid green
-    padding: 1em
-    margin: 1em
+
+/* Navigation Bar setup */
 
 .nav-container
     display: flex
     flex-direction: column
     box-sizing: border-box
-    padding: 0.15em
-    margin: 0em 0em 0.15em
-    min-height: 5em
+    background-color: $nav-deep
     border: 2px solid green
 
 .nav-row
     display: flex
     flex-direction: row
     box-sizing: border-box
-    padding: 0.15em
+    background-color: $nav-moderate
     border: 2px solid red
     justify-content: space-between
 
@@ -66,14 +79,27 @@ body
     flex-direction: row
     justify-content: space-between
     box-sizing: border-box
-    padding: 0.15em
     border: 2px solid blue
     min-width: 30%
 
 .nav-item
-    display: flex
-    border: 2px solid green
-    border-radius: 7px
+    background-color: $nav-deep
+
+.nav-content
+    a:link 
+        text-decoration: none
+        color: black
+    a:visited
+        text-decoration: none
+        color: black
+    a:hover
+        text-decoration: none
+        color: black
+    a:active
+        text-decoration: none
+        color: black
+
+/* Section Headers */
 
 .header
     display: flex

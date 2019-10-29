@@ -1,20 +1,28 @@
 <div class='column'>
     <div class='row'>
-        <%= @item.brand %> |
-        <%= @item.name %>
+        <%= link_to 'New Item', new_item_path %>
     </div>
     <div class='row'>
-        <%= @item.sex %> |
-        <%= @item.size %>
+        <h1><%= @item.brand %> |</h2>
+        <h1>| <%= @item.name %></h2>
+    </div>
+    <div class='column'>
+        <div class='row'>
+            <p><%= @item.sex %> |</p>
+            <p>| <%= @item.size %></p>
+        </div>
+        <div class='row'>
+            <p><%= @item.pictures %></p>
+        </div>
+        <div class='row'>
+            <p><%= @item.acquisition_value %> |</p>
+            <p>| <%= @item.disposal_value %></p>
+        </div>
+        <div class='row'>
+            <p><%= @item.notes %></p>
+        </div>
     </div>
     <div class='row'>
-        <%= @item.pictures %>
-    </div>
-    <div class='row'>
-        <%= @item.acquisition_price %>
-        <%= @item.disposal_price %>
-    </div>
-    <div class='row'>
-        <%= @item.notes %>
+        <%= link_to 'Back', inventory_path %>
     </div>
 </div>

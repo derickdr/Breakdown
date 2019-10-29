@@ -3,15 +3,15 @@ class ItemsController < ApplicationController
     before_action :authenticate_user!
 
     def new
+        @item = Item.new
     end
 
     def create
         @item = Item.new item_params
-        @item.mark = false
         if @item.save
-            redirect_to item_path
+            redirect_to @item
         else
-            
+            render :new
         end
     end
 
@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
     end
     
     def index
+        @items = Item.order(created_at: :DESC)
     end
 
     def edit

@@ -63,11 +63,11 @@ end
 items = Item.all
 
 4.times do
-    group_items = Item.sample(10)
-    group_users = User.sample(2) + superuser
-    group = Group.sample(1)
+    group_items = Item.all.sample(10)
+    group_users = User.all.sample(2)
+    group = Group.all.sample
     UserGroup.create(
-        groups: group,
+        group: group,
         users: group_users,
         items: group_items
     )
